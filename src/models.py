@@ -13,7 +13,7 @@ class Users(Base):
     user_name = Column(String(30), nullable=False)
     firstname = Column(String(20), nullable=False)
     lastname = Column(String(20), nullable=False)
-    email = Column(String, nullable=False, Unique=True)
+    email = Column(String, nullable=False, unique=True)
 
 class Follower(Base):
     __tablename__ = 'follower'
