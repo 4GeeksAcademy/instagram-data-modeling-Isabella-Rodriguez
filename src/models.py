@@ -19,15 +19,16 @@ class Follower(Base):
     __tablename__ = 'follower'
     id = Column(Integer, primary_key=True)
     User_from_id = Column(Integer, ForeignKey('users.id'))
-    user_from = relationship(Users) 
-    User_to_id = Column(Integer, ForeignKey('users.id')) 
-    user_to = relationship(Users)   
+    user_from = relationship(Users)   
 
 class Post(Base):
     __tablename__ = 'post'
     id = Column(Integer, primary_key=True)
     User_id = Column(Integer, ForeignKey('users.id'))
     users = relationship(Users) 
+    url_image = Column(String(2048), nullable=False)
+    created_at = Column(Integer, nullable=False)
+
 
 class Comment(Base):
     __tablename__ = 'comment'
